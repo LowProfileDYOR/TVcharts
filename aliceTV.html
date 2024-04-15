@@ -11,8 +11,9 @@
             overflow: hidden;
         }
         .tradingview-widget-container {
-            width: 100%; /* Imposta la larghezza al 100% del contenitore */
-            height: 100%; /* Imposta l'altezza al 100% del contenitore */
+            width: 300px; /* Larghezza fissa di 300px */
+            height: 360px; /* Altezza fissa di 360px */
+            margin: auto; /* Centra il widget orizzontalmente e verticalmente */
             display: flex;
             justify-content: center;
             align-items: center;
@@ -25,7 +26,9 @@
   <div class="tradingview-widget-container__widget"></div>
   <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js">
   {
-  "autosize": true,
+  "autosize": false, // Disattiva autosize per usare dimensioni fisse
+  "width": "300", // Larghezza fissa del widget
+  "height": "360", // Altezza fissa del widget
   "symbol": "BINANCE:ALICEUSDT",
   "interval": "240",
   "timezone": "Etc/UTC",
