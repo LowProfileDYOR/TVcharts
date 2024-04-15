@@ -6,29 +6,23 @@
         body, html {
             margin: 0;
             padding: 0;
-            height: 100%;
-            width: 100%;
             overflow: hidden;
+            background-color: transparent; /* Imposta sfondo trasparente per il body se necessario */
         }
         .tradingview-widget-container {
             display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: flex-start; /* Allinea al top per ridurre lo spazio vuoto sotto */
-            width: 100%; /* Adatta la larghezza al contenitore */
-            min-height: 0; /* Evita spazi vuoti non necessari */
+            justify-content: center; /* Centra orizzontalmente */
+            align-items: flex-start; /* Allinea in alto */
+            margin: 0 auto; /* Rimuove margini esterni */
+            width: 350px; /* Larghezza fissa del mini-chart */
+            height: 220px; /* Altezza fissa del mini-chart */
+            overflow: hidden; /* Nasconde il contenuto fuori dall'area del widget */
         }
-        .tradingview-widget-container__widget {
-            width: 350px; /* Larghezza predefinita del mini-chart */
-            height: 220px; /* Altezza predefinita del mini-chart */
-            margin: 0 auto; /* Centra il widget e rimuove margini esterni extra */
-        }
-        /* Riduci o rimuovi margini e padding che potrebbero causare spazio extra */
+        /* Assicurati che il contenitore del widget non abbia padding o margini aggiuntivi */
         .tradingview-widget-container * {
             margin: 0;
             padding: 0;
         }
-        /* Opzionale: Aggiungi ulteriori stili personalizzati qui */
     </style>
 </head>
 <body>
@@ -37,24 +31,19 @@
       <div class="tradingview-widget-container__widget"></div>
       <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js">
       {
-      "symbol": "BINANCE:ALICEUSDT",
-      "width": "100%", // Imposta la larghezza al 100% del contenitore
-      "height": 220,   // Imposta l'altezza fissa del mini-chart
-      "locale": "en",
-      "dateRange": "1D",
-      "colorTheme": "dark",
-      "trendLineColor": "rgba(255, 152, 0, 1)",
-      "isTransparent": true,
-      "autosize": false,
-      "largeChartUrl": ""
+        "symbol": "BINANCE:ALICEUSDT",
+        "width": 350,
+        "height": 220,
+        "locale": "en",
+        "dateRange": "1D",
+        "colorTheme": "dark",
+        "trendLineColor": "rgba(255, 152, 0, 1)",
+        "isTransparent": true,
+        "autosize": false,
+        "largeChartUrl": ""
       }
       </script>
     </div>
     <!-- TradingView Mini Chart Widget END -->
-
-    <!-- Qui puoi aggiungere altri elementi della pagina, come il bottone "Go!" -->
-    <button style="width: 100px; height: 50px; margin-top: 20px;">Go!</button>
-
 </body>
 </html>
-
