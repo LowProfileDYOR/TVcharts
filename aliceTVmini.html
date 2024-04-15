@@ -1,31 +1,60 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>TradingView Widget</title>
+    <title>TradingView Mini Chart</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+        }
+        .tradingview-widget-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start; /* Allinea al top per ridurre lo spazio vuoto sotto */
+            width: 100%; /* Adatta la larghezza al contenitore */
+            min-height: 0; /* Evita spazi vuoti non necessari */
+        }
+        .tradingview-widget-container__widget {
+            width: 350px; /* Larghezza predefinita del mini-chart */
+            height: 220px; /* Altezza predefinita del mini-chart */
+            margin: 0 auto; /* Centra il widget e rimuove margini esterni extra */
+        }
+        /* Riduci o rimuovi margini e padding che potrebbero causare spazio extra */
+        .tradingview-widget-container * {
+            margin: 0;
+            padding: 0;
+        }
+        /* Opzionale: Aggiungi ulteriori stili personalizzati qui */
+    </style>
 </head>
 <body>
-    <!-- Qui va il codice del widget -->
-<!-- TradingView Widget BEGIN -->
-<div class="tradingview-widget-container">
-  <div class="tradingview-widget-container__widget"></div>
-  <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/" rel="noopener nofollow" target="_blank"><span class="blue-text">Track all markets on TradingView</span></a></div>
-  <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js" async>
-  {
-  "symbol": "BINANCE:ALICEUSDT",
-  "width": "100%",
-  "height": "100%",
-  "locale": "en",
-  "dateRange": "1D",
-  "colorTheme": "dark",
-  "trendLineColor": "rgba(255, 152, 0, 1)",
-  "isTransparent": true,
-  "autosize": true,
-  "largeChartUrl": "",
-  "chartOnly": false,
-  "noTimeScale": false
-}
-  </script>
-</div>
-<!-- TradingView Widget END -->
+    <!-- TradingView Mini Chart Widget BEGIN -->
+    <div class="tradingview-widget-container">
+      <div class="tradingview-widget-container__widget"></div>
+      <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js">
+      {
+      "symbol": "BINANCE:ALICEUSDT",
+      "width": "100%", // Imposta la larghezza al 100% del contenitore
+      "height": 220,   // Imposta l'altezza fissa del mini-chart
+      "locale": "en",
+      "dateRange": "1D",
+      "colorTheme": "dark",
+      "trendLineColor": "rgba(255, 152, 0, 1)",
+      "isTransparent": true,
+      "autosize": false,
+      "largeChartUrl": ""
+      }
+      </script>
+    </div>
+    <!-- TradingView Mini Chart Widget END -->
+
+    <!-- Qui puoi aggiungere altri elementi della pagina, come il bottone "Go!" -->
+    <button style="width: 100px; height: 50px; margin-top: 20px;">Go!</button>
+
 </body>
 </html>
+
