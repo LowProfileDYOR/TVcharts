@@ -8,12 +8,11 @@
             padding: 0;
             height: 100%;
             width: 100%;
-            overflow: hidden; /* Previeni scrollbar indesiderati */
+            overflow: hidden;
         }
         .tradingview-widget-container {
-            width: 980px; /* Larghezza fissa del widget come specificato */
-            height: 680px; /* Altezza fissa del widget come specificato */
-            margin: auto; /* Centra il widget orizzontalmente e verticalmente */
+            width: 100%; /* Imposta la larghezza al 100% del contenitore */
+            height: 100%; /* Imposta l'altezza al 100% del contenitore */
             display: flex;
             justify-content: center;
             align-items: center;
@@ -26,9 +25,7 @@
   <div class="tradingview-widget-container__widget"></div>
   <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js">
   {
-  "autosize": false, /* Disabilita autosize per utilizzare dimensioni fisse */
-  "width": "980", /* Larghezza fissa per il widget */
-  "height": "680", /* Altezza fissa per il widget */
+  "autosize": true,
   "symbol": "BINANCE:ALICEUSDT",
   "interval": "240",
   "timezone": "Etc/UTC",
@@ -40,10 +37,11 @@
   "allow_symbol_change": false,
   "save_image": false,
   "calendar": false,
-  "container_id": "tradingview-widget-container__widget" /* Assicurati di avere un ID univoco se hai più widget nella stessa pagina */
+  "container_id": "tradingview-widget-container__widget"
   }
   </script>
 </div>
 <!-- TradingView Widget END -->
 </body>
 </html>
+
