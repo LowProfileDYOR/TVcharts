@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TradingView Mini Chart</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: transparent; /* Imposta sfondo trasparente per il body se necessario */
+        }
+        .tradingview-widget-container {
+            display: flex;
+            justify-content: center; /* Centra orizzontalmente */
+            align-items: flex-start; /* Allinea in alto */
+            margin: 0 auto; /* Rimuove margini esterni */
+            width: 350px; /* Larghezza fissa del mini-chart */
+            height: 220px; /* Altezza fissa del mini-chart */
+            overflow: hidden; /* Nasconde il contenuto fuori dall'area del widget */
+        }
+        /* Assicurati che il contenitore del widget non abbia padding o margini aggiuntivi */
+        .tradingview-widget-container * {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- TradingView Mini Chart Widget BEGIN -->
+    <div class="tradingview-widget-container">
+      <div class="tradingview-widget-container__widget"></div>
+      <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js">
+      {
+        "symbol": "BINANCE:GOGUSDT",
+        "width": 350,
+        "height": 220,
+        "locale": "en",
+        "dateRange": "1D",
+        "colorTheme": "dark",
+        "trendLineColor": "rgba(255, 152, 0, 1)",
+        "isTransparent": true,
+        "autosize": false,
+        "largeChartUrl": ""
+      }
+      </script>
+    </div>
+    <!-- TradingView Mini Chart Widget END -->
+</body>
+</html>
