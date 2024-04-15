@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TradingView Mini Chart</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: transparent;
+        }
+        .tradingview-widget-container {
+            margin: 0 auto;
+            width: 350px; /* Larghezza fissa per desktop */
+            height: 220px; /* Altezza fissa per desktop */
+        }
+
+        /* Media queries per adattare il mini-chart alle diverse dimensioni dello schermo */
+        @media (max-width: 480px) { /* Per dispositivi più piccoli come smartphone */
+            .tradingview-widget-container {
+                width: 100%; /* Larghezza piena dello schermo */
+                height: auto; /* Altezza auto per mantenere il rapporto */
+            }
+            .tradingview-widget-container__widget {
+                width: 100%; /* Larghezza piena dello schermo */
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- TradingView Mini Chart Widget BEGIN -->
+    <div class="tradingview-widget-container">
+      <div class="tradingview-widget-container__widget"></div>
+      <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js">
+      {
+        "symbol": "BINANCE:ALICEUSDT",
+        "width": "350", /* Larghezza predefinita, ma verrà sovrascritta da media queries su dispositivi mobili */
+        "height": "220", /* Altezza predefinita */
+        "locale": "en",
+        "dateRange": "1D",
+        "colorTheme": "dark",
+        "trendLineColor": "rgba(255, 152, 0, 1)",
+        "isTransparent": true,
+        "autosize": false,
+        "largeChartUrl": ""
+      }
+      </script>
+    </div>
+    <!-- TradingView Mini Chart Widget END -->
+</body>
+</html>
