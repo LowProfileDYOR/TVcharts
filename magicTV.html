@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TradingView Widget</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+        }
+        .tradingview-widget-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 500px; /* Dimensione predefinita per desktop */
+            height: 375px; /* Dimensione predefinita per desktop */
+            margin: auto;
+        }
+
+        /* Media query per dispositivi con larghezza fino a 600px */
+        @media (max-width: 600px) {
+            .tradingview-widget-container {
+                width: 360px; /* Larghezza per dispositivi mobili */
+                height: 203px; /* Altezza per dispositivi mobili, rapporto 16:9 */
+            }
+        }
+
+        /* Media query per dispositivi molto piccoli */
+        @media (max-width: 400px) {
+            .tradingview-widget-container {
+                width: 300px; /* Larghezza per dispositivi molto piccoli */
+                height: 225px; /* Altezza per dispositivi molto piccoli, rapporto 4:3 */
+            }
+        }
+    </style>
+</head>
+<body>
+<!-- TradingView Widget BEGIN -->
+<div class="tradingview-widget-container">
+  <div class="tradingview-widget-container__widget"></div>
+  <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js">
+  {
+  "autosize": false,
+  "width": "100%",
+  "height": "100%",
+  "symbol": "BINANCE:MAGICUSDT",
+  "interval": "240",
+  "timezone": "Etc/UTC",
+  "theme": "dark",
+  "style": "1",
+  "locale": "en",
+  "enable_publishing": false,
+    "backgroundColor": "rgba(0, 0, 0, 1)",
+  "hide_legend": true,
+  "allow_symbol_change": false,
+  "save_image": false,
+  "calendar": false,
+  "container_id": "tradingview-widget-container__widget"
+  }
+  </script>
+</div>
+<!-- TradingView Widget END -->
+</body>
+</html>
